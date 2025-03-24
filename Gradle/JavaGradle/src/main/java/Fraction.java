@@ -38,7 +38,26 @@ public class Fraction {
    }
 
    public static void main (String args[]) {
-      try {
+      if (args.length == 2) {
+         try {
+         // create a new instance
+         // Fraction *frac = [[Fraction alloc] init];
+         Fraction frac = new Fraction();
+
+         // set the values
+         frac.setNumerator(Integer.parseInt(args[0]));
+         frac.setDenominator(Integer.parseInt(args[1]));
+
+         // print it
+         System.out.print("The fraction is: ");
+         frac.print();
+         System.out.println("");
+
+         } catch(Exception e) {
+            e.printStackTrace();
+            }
+      } else {
+         try {
          // create a new instance
          // Fraction *frac = [[Fraction alloc] init];
          Fraction frac = new Fraction();
@@ -52,9 +71,10 @@ public class Fraction {
          frac.print();
          System.out.println("");
 
-      }catch(Exception e) {
-         e.printStackTrace();
-      }
+         } catch(Exception e) {
+            e.printStackTrace();
+            }
+         }
    }
 }
 
